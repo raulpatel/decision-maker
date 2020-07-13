@@ -5,7 +5,7 @@ let main = function () {
   //dispatch on button id
 
   if (this.id == "btn1") {
-    let x, y, z, a, b;
+    let x, y, z, a;
     x = document.querySelector("input");
     y = document.querySelector("ol");
     let list = document.querySelectorAll("li");
@@ -18,9 +18,7 @@ let main = function () {
   }
 
   if (this.id == "btn2") {
-    let x,
-      y,
-      i = 0;
+    let x, y, i = 0;
     x = document.querySelector("ol");
     while (index - i > 2) {
       let num = Math.floor(Math.random() * index);
@@ -32,9 +30,7 @@ let main = function () {
     }
   }
   if (this.id == "btn3") {
-    let x,
-      y,
-      i = 0;
+    let x, y;
     x = document.querySelector("ol");
     let num = Math.floor(Math.random() * 2);
     y = x.childNodes[num];
@@ -55,7 +51,7 @@ let main = function () {
 
 //register event handler
 window.addEventListener("load", function () {
-  let x, y, z;
+  let x, y;
   x = document.querySelector("div");
   y = document.createElement("ol");
   x.appendChild(y);
