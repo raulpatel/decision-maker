@@ -1,51 +1,67 @@
 // jshint esversion: 7
-let index = 0;
+
+//initialize tracker of number of li elements
+let count = 0;
 //define event handler
 let main = function () {
   //dispatch on button id
 
   if (this.id == "btn1") {
+    //create new li element in the ol from text in input
     let x, y, z, a;
     x = document.querySelector("input");
     y = document.querySelector("ol");
-    let list = document.querySelectorAll("li");
-    z = document.createElement("li");
-    a = x.value;
-    z.textContent = a;
-    y.appendChild(z);
-    x.value = "";
-    index += 1;
+    if (x.value != "") {
+      //checking that input is not blank
+      z = document.createElement("li");
+      a = x.value;
+      z.textContent = a;
+      y.appendChild(z);
+      x.value = "";
+      count += 1;
+      //increment count when li element is added
+    }
   }
 
   if (this.id == "btn2") {
-    let x, y, i = 0;
+    let x,
+      y,
+      i = 0;
     x = document.querySelector("ol");
-    while (index - i > 2) {
-      let num = Math.floor(Math.random() * index);
-      if (x.hasChildNodes()) {
+    if (x.hasChildNodes()) {
+      //condition check to ensure there are currently li elements
+      while (count - i > 2) {
+        //loops until 2 li elements remain
+        let num = Math.floor(Math.random() * count);
+        //generates random number between 0 and the last index of li elements
         y = x.childNodes[num];
         x.removeChild(y);
+        count -= 1;
+        //remove the li element at that index and decrement the count
       }
-      index -= 1;
     }
   }
   if (this.id == "btn3") {
-    let x, y;
+    //same as btn2 but loops until one li element remains
+    let x,
+      y,
+      i = 0;
     x = document.querySelector("ol");
-    let num = Math.floor(Math.random() * 2);
-    y = x.childNodes[num];
-    x.removeChild(y);
-    index -= 1;
-  }
-  if (this.id == "clear") {
-    let x = document.querySelector("ol");
-    let y = document.querySelectorAll("li");
     if (x.hasChildNodes()) {
-      for (var i = y.length - 1; y.length > 0; i--) {
-        x.removeChild(x.childNodes[i]);
-        index -= 1;
+      while (count - i > 1) {
+        let num = Math.floor(Math.random() * 2);
+        y = x.childNodes[num];
+        x.removeChild(y);
+        count -= 1;
       }
     }
+  }
+  if (this.id == "clear") {
+    //clears the list html elements to start from scratch
+    var myList = document.querySelector("ol");
+    myList.innerHTML = "";
+    count = 0;
+    //reset the count
   }
 }; // end of main function
 
@@ -55,8 +71,9 @@ window.addEventListener("load", function () {
   x = document.querySelector("div");
   y = document.createElement("ol");
   x.appendChild(y);
+  //creates the ol element on page load after the div
   let buttons = document.querySelectorAll("button");
   for (var i = 0; i < buttons.length; ++i)
-    //when the button gets clicked, who ya gonna call?
+    //add the main function as a listener to all button clicks
     buttons[i].addEventListener("click", main);
 });
