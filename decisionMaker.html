@@ -2,43 +2,74 @@
 <html>
   <head>
     <title>Decision Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!--bootstrap-->
     <link rel="stylesheet" href="decisionMaker.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&ampdisplay=swap"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <h1>Decision Maker</h1>
-    <h3>For People With Trouble Making Decisions</h3>
+    <div class="container-fluid">
+      <h1>Decision Maker</h1>
+    </div>
+    <div class="container-fluid">
+      <h2>For People With Trouble Making Decisions</h2>
+    </div>
     <hr />
+    <div class="row">
+      <h3>
+        <div class="col-xs-4">
+          <button id="clear">
+            Clear the List
+          </button>
+        </div>
+        <div class="col-xs-4">
+          <button id="edit">Edit the List</button>
+        </div>
+        <div class="col-xs-4">
+          <button id="restore">
+            Original List
+          </button>
+        </div>
+      </h3>
+    </div>
     <br />
-    <p>
-      Enter Your Options (One At A Time): <input type="text" name="" />
-      <button id="btn1">
-        Add Item To The List!
-      </button>
-    </p>
-    <p>
-      Click to Narrow It Down To 2 Options To Decide Between:
-      <button id="btn2">
-        Narrow It Down!
-      </button>
-      <br />
-    </p>
-    <p>
-      Click This To Make A Decision!:
-      <button id="btn3">
-        Get Your Decision!
-      </button>
-      <br />
-    </p>
-    <button id="clear">
-      Clear List
-    </button>
+    <div class="container-fluid">
+      <h3>
+        Enter your options (one at a time): <input type="text" name="" />
+        <button id="btn1">
+          Add Item to List!!
+        </button>
+      </h3>
+    </div>
+    <div class="container-fluid">
+      <h3>
+        Click to narrow it down to two options to decide between:
+        <button id="btn2">
+          Narrow It Down!!!
+        </button>
+      </h3>
+    </div>
+    <div class="container-fluid">
+      <h3>
+        Click this to make a decision:
+        <button id="btn3">
+          Get Your Decision!
+        </button>
+      </h3>
+    </div>
     <br />
-    <div></div>
+    <div id="listHere"></div>
 
     <script type="text/javascript" src="decisionMaker.js"></script>
   </body>
