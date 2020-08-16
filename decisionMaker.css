@@ -1,8 +1,8 @@
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: rgb(35, 50, 100);
+  background-color: rgb(33, 0, 198);
   text-align: center;
-  color: rgb(250, 210, 110);
+  color: rgb(255, 214, 10);
   margin: 0 auto;
   padding: 2vw;
 }
@@ -15,7 +15,7 @@ input {
 }
 hr {
   max-width: 75%;
-  border-color: rgb(250, 210, 110);
+  border-color: rgb(255, 214, 10);
 }
 h1 {
   font-weight: bold;
@@ -36,11 +36,38 @@ ol {
 }
 button {
   border-radius: 1.2vw;
-  background-color: rgb(250, 210, 110);
+  background-color: rgb(255, 215, 96);
   color: rgb(40, 20, 5);
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   border-width: 0.2vw;
   padding: 0.2vw 1vw 0.2vw 1vw;
   margin-top: 2vw;
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  overflow: scroll;
+}
+#help {
+  cursor: pointer;
+}
+#text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  color: rgb(255, 214, 10);
+  transform: translate(-50%, -40%);
+  padding: 20px;
 }
