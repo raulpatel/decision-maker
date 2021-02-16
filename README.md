@@ -1,5 +1,8 @@
 # decision-maker
 
+This was an app I created after taking an introductory web development class my first year. I used it to learn basics of JavaScript and JQuery. 
+I deployed it using Firebase. I also played around with frameworks using Bootstrap.
+
 An app to help you make decisions!
 
 Add options to the list one by one. When you've got your list of options, you can narrow it down to two to decide between or have the program make a decision for
